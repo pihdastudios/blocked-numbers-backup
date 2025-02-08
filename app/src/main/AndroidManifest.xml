@@ -8,17 +8,10 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:versionCode="6291479"
-    android:versionName="2.0.0"
     package="com.pihdastudios.blockednumbersbackup">
 
-    <!-- Required permissions (for calls, blocked numbers, etc.) -->
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-feature android:name="android.hardware.telephony" android:required="true" />
 
     <application
         android:allowBackup="true"

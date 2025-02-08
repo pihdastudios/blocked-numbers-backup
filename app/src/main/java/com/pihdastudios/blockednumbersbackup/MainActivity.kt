@@ -17,7 +17,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.BlockedNumberContract
 import android.telecom.TelecomManager
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -359,7 +358,11 @@ class MainActivity : ComponentActivity() {
                     }
                     filePickerLauncher.launch(intent)
                 },
-                onSetDefault = { setDefaultPhoneApp() },
+                onSetDefault = {
+                    setDefaultPhoneApp()
+                    // TODO: Update number after setting default phone app
+                    totalBlockedState.intValue = blockedNumbersManager.totalBlockedNumbers()
+                },
                 onDeleteAll = {
                     val rowsDeleted = blockedNumbersManager.deleteAll()
                     if (rowsDeleted > 0) {
